@@ -7,7 +7,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://ciem5000-2025.github.io/book/" #Replace this with your own URL
+  baseurl :  "https://oit.tudelft.nl/CIEM5000/2025" #Replace this with your own URL
 
 sphinx:
   config:
@@ -19,9 +19,9 @@ sphinx:
     html_theme_options:
       logo:
         text: CIEM5000 - Matrix Method in statics
-      repository_url: "https://github.com/CIEM5000-2025/book"
+      repository_url: "https://github.com/TUDelft-books/CIEM5000/"
       path_to_docs: "book"
-      repository_branch: "main"
+      repository_branch: "2025"
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
