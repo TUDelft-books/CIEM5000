@@ -21,7 +21,7 @@ sphinx:
         text: CIEM5000 - Matrix Method in statics
       repository_url: "https://github.com/TUDelft-books/CIEM5000"
       path_to_docs: "book"
-      repository_branch: "main"
+      repository_branch: "2026"
       use_edit_page_button: true
       use_repository_button: true
       use_issues_button : true
