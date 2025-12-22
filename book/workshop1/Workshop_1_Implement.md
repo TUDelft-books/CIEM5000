@@ -17,6 +17,10 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
+::::::{versionadded} v2026.1.0 After workshop 1
+Solutions workshop 1 in text and downloads 
+::::::
+
 ```
 
 # Implementation
@@ -34,6 +38,11 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "True"
 ```
 
+```{custom_download_link} ./Workshop_1_Implement_stripped_sol.ipynb
+:text: ".ipynb solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} ./Workshop_1_Implement.md
 :text: ".md:myst"
 :replace_default: "False"
@@ -41,6 +50,11 @@ Our matrix method implementation is now completely stored in a local package, co
 
 ```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments solutions workshop 1"
 :replace_default: "False"
 ```
 
@@ -120,6 +134,26 @@ This node has:
 
 +++
 
+```{solution-start} exercise1.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+mm.Node.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(3,4)
+print(node1)
+print(node2)
+```
+
+```{solution-end}
+```
+
++++
+
 ## 2. The Element class
 This class is stored in [`./matrixmethod/elements.py`](../matrixmethod/elements.md)
 
@@ -144,6 +178,17 @@ However, the implementation is incomplete:
 
 Add the missing pieces to the code in `./matrixmethod/elements.py`, before you perform the checks below. Do you specify your stiffness matrix in the global or local coordinate system?
 ```
+
+(exercise2_1_text_name)=
+````{admonition} Solution
+:class: solution
+
+The stiffness matrix is specified in the global coordinate system.
+
+For the code implementations see `./matrixmethod/elements.py`:
+- [`__init__`](exercise2_1_py)
+- [`stiffness`](exercise2_1_2_py)
+````
 
 +++
 
@@ -188,6 +233,41 @@ print(elem.stiffness())
 ```{exercise-end}
 ```
 
+```{solution-start} exercise2.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+mm.Node.clear()
+mm.Element.clear()
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(2,0)
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = 4
+
+elem.set_section (section)
+
+print(elem)
+print(elem.T)
+print(elem.stiffness())
+```
+
+- The transformation matrix is identity which should be because the local coordinate system is aligned with the global coordinate system
+- The values of the stiffness matrix are manually checked with the stiffness matrix from the slides and are correct.
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 2.3
 :label: exercise2.3
 :nonumber: true
@@ -202,6 +282,37 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise2.3
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(0,1)
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = 1
+
+elem.set_section (section)
+
+print(elem)
+print(elem.T)
+print(elem.stiffness())
+```
+
+- The transformation matrix moves the extension terms to the column corresponding to the vertical displacements, which is correct.
+- The transformation matrix moves the deflection terms to the column corresponding to the horizontal displacements, which is correct.
+- The rotation terms are untouched, which is correct
+
+```{solution-end}
 ```
 
 ```{exercise-start} Workshop 1 - 2.4
@@ -220,6 +331,31 @@ Do the matrices match with what you'd expect?
 ```{exercise-end}
 ```
 
+```{solution-start} exercise2.4
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(-1,-np.sqrt(3))
+elem = mm.Element ( node1, node2 )
+
+print(elem)
+print(elem.T)
+```
+
+- Again, the rotation term is not transformed, which is expected.
+- A rotation of $120^{\circ}$ corresponds with a cosine term of $-0.5$ which is correctly calculated
+- A rotation of $120^{\circ}$ corresponds with a sin term of $0.5\sqrt{3}$ which is correctly calculated
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 2.5
 :label: exercise2.5
 :nonumber: true
@@ -236,6 +372,31 @@ Do the matrices match with what you'd expect?
 ```{exercise-end}
 ```
 
+```{solution-start} exercise2.5
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(1,-np.sqrt(3))
+elem = mm.Element ( node1, node2 )
+
+print(elem)
+print(elem.T)
+```
+
+- Again, the rotation term is not transformed, which is expected.
+- A rotation of $60^{\circ}$ corresponds with a cosine term of $0.5$ which is correctly calculated
+- A rotation of $60^{\circ}$ corresponds with a sin term of $0.5\sqrt{3}$ which is correctly calculated
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 2.6
 :label: exercise2.6
 :nonumber: true
@@ -250,6 +411,23 @@ Check your answer using pen and paper. Tip: make a drawing instead of doing all 
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise2.6
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
+```
+
+```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/sketch.png
+:align: center
+```
+
+```{solution-end}
 ```
 
 ## 3. The Constrainer class
@@ -269,6 +447,12 @@ However, the implementation is incomplete:
 
 Add the missing pieces to the code, before you perform the check below
 ```
+
+````{admonition} Solution
+:class: solution
+
+For the code implementations see `./matrixmethod/constrainer.py`: [`constrain`](exercise3_1_py)
+````
 
 ```{exercise-start} Workshop 1 - 3.2
 :label: exercise3.2
@@ -290,6 +474,38 @@ print(np.shape(np.linalg.inv(Kff)))
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise3.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+section = {}
+section['EI'] = 1
+elem.set_section (section)
+
+k = elem.stiffness()
+#print(np.linalg.inv(k))
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+
+print(con)
+
+f = np.zeros (6) #empty load vector
+Kff, Fff = con.constrain( k, f )
+print(np.shape(np.linalg.inv(Kff)))
+```
+
+- The inverted matrix of the original $\mathbf{K}$ gives a singular matrix, which is correct as the structure can perform any rigid body translation / rotation.
+- The constrained matrix reduces $\mathbf{K}$ to only the free terms, which is not singular any more.
+- The dimensions should match the number of free dofs, which is correct.
+
+```{solution-end}
 ```
 
 ## 4. Full implementation extension bar
@@ -330,6 +546,22 @@ Create two nodes here. You can store them on a `list` or simply create them as t
 ```{exercise-end}
 ```
 
+```{solution-start} exercise4.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+L  = 1
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 4.2
 :nonumber: true
 :label: exercise4.2
@@ -342,6 +574,26 @@ Here we only have a single element, so there is no need to store it in a `list` 
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise4.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+elem = mm.Element ( node1, node2 )
+
+EA = 1000
+section = {}
+section['EA'] = EA
+
+elem.set_section (section)
+print(elem)
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} Workshop 1 - 4.3
@@ -360,6 +612,27 @@ You also need to pass the load $F$ on to Node 2. Check the member functions of `
 ```{exercise-end}
 ```
 
+```{solution-start} exercise4.3
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+
+F  = 100
+node2.add_load ([F,0,0])
+
+print(node2)
+print(con)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 4.4
 :nonumber: true
 :label: exercise4.4
@@ -372,6 +645,22 @@ Now assemble the global stiffness matrix and force vector. Since we only have on
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise4.4
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[3:6] = node2.p
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} Workshop 1 - 4.5
@@ -388,6 +677,21 @@ Constrain the problem and solve for nodal displacements.
 ```{exercise-end}
 ```
 
+```{solution-start} exercise4.5
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+Kff, Ff = con.constrain ( global_k, global_f )
+u = np.matmul ( np.linalg.inv(Kff), Ff )
+print(u)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 4.6
 :nonumber: true
 :label: exercise4.6
@@ -400,6 +704,22 @@ Finally, compare the displacement at the end of the bar with the one coming from
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise4.6
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+con.full_disp(u)
+```
+
+- The ODE solution is $ \cfrac{F L}{EA} = \cfrac{100 \cdot 1}{1000} = 0.1$ which equals the solution from the matrix method.
+- Only the first term (displacement in horizontal direction) is relevant
+
+```{solution-end}
 ```
 
 ## 5. Full implementation bending beam
@@ -436,6 +756,21 @@ Create nodes
 ```{exercise-end}
 ```
 
+```{solution-start} exercise5.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+L  = 1
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 5.2
 :label: exercise5.2
 :nonumber: true
@@ -448,6 +783,26 @@ Create element
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise5.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+elem = mm.Element ( node1, node2 )
+
+EI = 1000
+section = {}
+section['EI'] = EI
+
+elem.set_section (section)
+print(elem)
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} Workshop 1 - 5.3
@@ -464,6 +819,24 @@ Set boundary conditions
 ```{exercise-end}
 ```
 
+```{solution-start} exercise5.3
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+F  = 100
+node2.add_load ([0,F,0])
+print(con)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 5.4
 :label: exercise5.4
 :nonumber: true
@@ -476,6 +849,23 @@ Assemble the system of equations.
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise5.4
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} Workshop 1 - 5.5
@@ -492,6 +882,21 @@ Constrain the problem and solve for nodal displacements
 ```{exercise-end}
 ```
 
+```{solution-start} exercise5.5
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+Kff, Ff = con.constrain ( global_k, global_f )
+u = np.matmul ( np.linalg.inv(Kff), Ff )
+print(u)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 1 - 5.6
 :label: exercise5.6
 :nonumber: true
@@ -506,4 +911,13 @@ Did your solutions match? If so, your implementation is correct!
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise5.5
+:class: dropdown
+```
+
+The solution from a forget-me-not is $\cfrac{FL^3}{3EI} = \cfrac{100 \cdot 1^3}{3\cdot 1000} \approx 0.0333$ for the deflection and $\left|\cfrac{FL^2}{2EI}\right|= \left|\cfrac{100 \cdot 1^2}{2\cdot 1000}\right| = 0.05$ for the rotation which equals the solution from the matrix method.
+
+```{solution-end}
 ```

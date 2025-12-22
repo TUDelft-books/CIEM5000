@@ -13,6 +13,10 @@ kernelspec:
 
 ```{margin}
 
+::::::{versionadded} v2026.1.0 After workshop 1
+Solutions workshop 1 in text and downloads 
+::::::
+
 ::::::{attention}
 This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 
@@ -28,10 +32,21 @@ After each workshop, the solution will be added to this preview and to the [GitH
 :replace_default: "False"
 ```
 
+```{custom_download_link} ./matrixmethod_solution/elements.py
+:text: ".py solution workshop 1"
+:replace_default: "False"
+```
+
 ```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
+
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments with solutions workshop 1"
+:replace_default: "False"
+```
+
 
 ```{code-cell} ipython3
 import numpy as np
@@ -125,6 +140,29 @@ class Element:
 ```
 
 +++
+
+(exercise2_1_py)=
+```{solution-start} exercise2.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        alpha = np.arctan2( - (self.nodes[1].z - self.nodes[0].z) , (self.nodes[1].x - self.nodes[0].x))
+
+        T = np.zeros((6, 6))
+
+        T[0, 0] = T[1, 1] = T[3, 3] = T[4, 4] = np.cos(alpha)
+        T[0, 1] = T[3, 4] = -np.sin(alpha)
+        T[1, 0] = T[4, 3] = np.sin(alpha)
+        T[2, 2] = T[5, 5] = 1
+
+```
+
+```{solution-end}
+```
+
++++
         
 ```{code-cell} ipython3
 
@@ -180,6 +218,35 @@ class Element:
 
 +++
 
+(exercise2_1_2_py)=
+```{solution-start} exercise2.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        # Extension contribution
+
+        k[0, 0] = k[3, 3] = EA / L
+        k[3, 0] = k[0, 3] = -EA / L
+
+        # Bending contribution
+
+        k[1, 1] = k[4, 4] = 12.0 * EI / L / L / L
+        k[1, 4] = k[4, 1] = -12.0 * EI / L / L / L
+        k[1, 2] = k[2, 1] = k[1, 5] = k[5, 1] = -6.0 * EI / L / L
+        k[2, 4] = k[4, 2] = k[4, 5] = k[5, 4] = 6.0 * EI / L / L
+        k[2, 2] = k[5, 5] = 4.0 * EI / L
+        k[2, 5] = k[5, 2] = 2.0 * EI / L
+
+        return np.matmul(np.matmul(self.Tt, k), self.T)
+
+```
+
+```{solution-end}
+```
+
++++
         
 ```{code-cell} ipython3
 
