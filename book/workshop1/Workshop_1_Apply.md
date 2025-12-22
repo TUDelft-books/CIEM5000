@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.2
+    jupytext_version: 1.17.2
 kernelspec:
   display_name: base
   language: python
@@ -14,10 +14,10 @@ kernelspec:
 ```{margin}
 
 ::::::{attention}
-This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
-::::::{versionadded} v2025.1.0 After workshop 1
+::::::{versionadded} v2026.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
 ::::::
 
@@ -48,12 +48,12 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_1
 :text: "All files practice assignments solutions workshop 1"
 :replace_default: "False"
 ```

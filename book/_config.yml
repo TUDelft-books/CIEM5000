@@ -1,5 +1,5 @@
 title: Matrix Method in statics
-author: Tom van Woudenberg and Iuri Rocha from Delft University of Technology<br>Built with <a href="https://teachbooks.io">TeachBooks</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a> #add your own name here
+author: Tom van Woudenberg and Iuri Rocha from Delft University of Technology. Built with <a href="https://teachbooks.io">TeachBooks</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a> #add your own name here
 
 execute:
   execute_notebooks: "off"
@@ -7,7 +7,7 @@ execute:
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://oit.tudelft.nl/2026/" #Replace this with your own URL
+  baseurl :  "https://oit.tudelft.nl/CIEM5000/2026/" #Replace this with your own URL
 
 sphinx:
   config:
@@ -27,8 +27,11 @@ sphinx:
       use_issues_button : true
       launch_buttons:
         thebe: true
+# START REMOVE-FROM-RELEASE
+      announcement: "<p>This book is not the version shared with students. That one is available here <a href='https://oit.tudelft.nl/CIEM5000/2026/' style='color: cyan;'>oit.tudelft.nl/CIEM5000/2026/</a></p>"
+    keep_warnings: true
+# END REMOVE-FROM-RELEASE
     html_show_copyright: false
-    html_last_updated_fmt: '%B %-d, %Y'
     html_static_path: ["figures"] # add folders that contain files that need to be included, such as the location of the logo(s)
     mathjax3_config:
       chtml: {
@@ -39,6 +42,7 @@ sphinx:
           "mrm": "\\mathrm"
           "mymat[1]": "\\left[ \\begin{matrix} #1 \\end{matrix} \\right]"
     named_colors_custom_colors: {'cA':[1,113,136],'cB':[195,49,47],'cE':[0,163,144],'cI':[235,114,70]}
+    tud_change_titlesize: false
           
   extra_extensions:
     - sphinx.ext.extlinks

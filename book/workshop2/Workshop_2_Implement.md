@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.2
+    jupytext_version: 1.17.2
 kernelspec:
   display_name: base
   language: python
@@ -14,10 +14,10 @@ kernelspec:
 ```{margin}
 
 ::::::{attention}
-This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
-::::::{versionadded} v2025.2.0 After workshop 2
+::::::{versionadded} v2026.2.0 After workshop 2
 Solutions workshop 2 in text and downloads 
 ::::::
 
@@ -44,12 +44,12 @@ In this notebook you will continue to implement the matrix method and check it w
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_2
 :text: "All files practice assignments with solutions workshop 2"
 :replace_default: "False"
 ```
@@ -113,8 +113,8 @@ The implementation is incomplete:
 Add the missing pieces to the code, before you perform the checks below.
 ```
 
-````{solution} 2_exercise2.1
-:class: dropdown
+````{admonition} Solution
+:class: solution
 
 For the code implementations see `./matrixmethod/elements.py`:
 - [`add_distributed_load`](2_exercise2_1_py_1)
@@ -153,7 +153,6 @@ print(#YOUR ELEMENT HERE
 ```
 
 ```{solution-start} 2_exercise2.2
-:class: dropdown
 ```
 
 ```{code-cell} ipython3
@@ -207,7 +206,6 @@ Now solve the nodal displacements. Once you are done, compare the rotation at th
 ```
 
 ```{solution-start} 2_exercise2.3
-:class: dropdown
 ```
 
 ```{code-cell} ipython3
@@ -254,7 +252,6 @@ u_elem = con.full_disp(#YOUR CODE HERE)
 ```
 
 ```{solution-start} 2_exercise2.4
-:class: dropdown
 ```
 
 ```{code-cell} ipython3
@@ -288,7 +285,6 @@ Calculate the deflection at midspan and plot the deflected structure using `plot
 ```
 
 ```{solution-start} 2_exercise2.5
-:class: dropdown
 ```
 
 ```{code-cell} ipython3
@@ -320,8 +316,8 @@ Add the missing pieces to the code and docstring, before you perform the checks 
 
 ```
 
-````{solution} 2_exercise3.1
-:class: dropdown
+````{admonition} Solution
+:class: solution
 
 For the code implementations see `./matrixmethod/constrainer.py`:
 - [`constrain`](2_exercise3_1_py_1)
@@ -358,7 +354,6 @@ Use the code blocks below to set up and solve this problem and check the require
 ```
 
 ```{solution-start} 2_exercise3.2
-:class: dropdown
 ```
 
 - The displacements will be zero, as everything is fixed
@@ -434,7 +429,6 @@ Use the code blocks below to set up and solve this problem and check the require
 ```
 
 ```{solution-start} 2_exercise3.3
-:class: dropdown
 ```
 
 ```{code-cell} ipython3

@@ -7,7 +7,7 @@ jupytext:
     jupytext_version: 1.16.6
 ---
 
-# Recap displacement method
+# Recap displacement method with degrees of freedom
 
 In the previous [chapter](./recap.ipynb) you've seen how solving for integration constants because a labour-intensive process for more complicated structures. A way of circumventing that is solving for nodal displacements! You might have seen that before when solving statically indeterminate structures using the displacement method!
 
@@ -15,7 +15,7 @@ In the previous [chapter](./recap.ipynb) you've seen how solving for integration
 We'll investigate the equivalence between solving structures with the displacement method and the matrix method.
 ::::::
 
-The displacement method for statically indeterminate structures works by defining a single nodal displacement of the equivalent statically determinate structure which defines the displacement of the full structure. The nodal displacement can be solved for by equilibrium relations of the external forces and the force corresponding to the displacement. Solving this equation allows you to find the full displacement- and force distribution.
+The displacement method for statically indeterminate structures works by defining a single or a few nodal displacement of the equivalent statically determinate structure which defines the displacement of the full structure. The nodal displacement can be solved for by equilibrium relations of the external forces and the force corresponding to the displacement. Solving this equation allows you to find the full displacement- and force distribution.
 
 Let's look at an statically indeterminate example
 
@@ -75,7 +75,7 @@ The similarities and differences are shown in the table below.
 |Displacement method|Matrix method|
 |:-:|:-:|
 |Convert structure in two statically determinate parts|Convert structure in mostly identical elements|
-|Evaluate one nodal displacements for each parts|Evaluate all free nodal displacements using standard elements|
+|Evaluate one or a few nodal displacements for each parts|Evaluate all free nodal displacements using standard elements|
 |Solve nodal equilibrium where the two statically determinate parts are connected|Solve nodal equilibrium in matrix form $\mathbf{K}\mathbf{u}=\mathbf{f}$|
 
 :::

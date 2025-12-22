@@ -4,18 +4,12 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.2
+    jupytext_version: 1.17.2
 kernelspec:
   display_name: base
   language: python
   name: python3
 ---
-
-```{margin}
-
-> This page reuses <license> content from {cite:t}`MUDE`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
-
-```
 
 # Finite element method vs. Matrix Method
 
@@ -31,7 +25,7 @@ We'll investigate the differences and equivalence between solving structures wit
 
 Although the two method can give the same results, the methods are different.
 
-The matrix method solves the strong from of the differential equation, as derived in [](../lecture1/single_element.md). The finite element method solves the weak form by multiplying the strong form by a test function {cite:p}`MUDE2`. In doing so, the choice for the shape function of the test-functions and approximate solution matters. The two methods end up with the same solution if the "approximation" assumed by FEM (linear shape functions for extension, cubic for bending) turn out to be the exact ODE solution.
+The matrix method solves the strong from of the differential equation, as derived in [](../lecture1/single_element.md). The finite element method solves the weak form by multiplying the strong form by a test function {cite:p}`MUDE`. In doing so, the choice for the shape function of the test-functions and approximate solution matters. The two methods end up with the same solution if the "approximation" assumed by FEM (linear shape functions for extension, cubic for bending) turn out to be the exact ODE solution.
 
 In terms of global and local coordinate systems, there's an additional difference. Where the matrix method solves the nodal displacements and support reactions globally, using locally derived force-displacement relations. On the contrary, the finite element method solves the weak form globally with shape functions defined globally.
 
@@ -51,6 +45,12 @@ Finally, the matrix method has limitations. It turns out to be impossible to glu
 
 +++
 
+```{margin}
+
+> This page reuses <license> content from {cite:t}`MUDE`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+
+```
+
 ## Example with finite element method
 
 Let's consider the examples from [](../lecture1/displacement.md):
@@ -62,7 +62,7 @@ Let's consider the examples from [](../lecture1/displacement.md):
 Statically indeterminate extension bar
 ```
 
-We'll apply the finite element method by using the matrix implementation from [MUDE](https://mude.citg.tudelft.nl/2024/book/fem/matrix.html) {cite:p}`MUDE`. We use linear shape functions: $ N_a(x) = \cfrac{x_b-x}{x_b-x_a}=\cfrac{x_b-x}{\Delta x}$ and $N_b(x)=\cfrac{x-x_a}{x_b-x_a}=\cfrac{x-x_a}{\Delta x}$. For this specific example, this matches the linear normal force distribution, leading to similar results:
+We'll apply the finite element method by using the matrix implementation from [MUDE](https://mude.citg.tudelft.nl/book/2025/fem/matrix.html) {cite:p}`MUDE`. We use linear shape functions: $ N_a(x) = \cfrac{x_b-x}{x_b-x_a}=\cfrac{x_b-x}{\Delta x}$ and $N_b(x)=\cfrac{x-x_a}{x_b-x_a}=\cfrac{x-x_a}{\Delta x}$. For this specific example, this matches the linear normal force distribution, leading to similar results:
 
 ```{code-cell} ipython3
 :tags: [hide-cell, thebe-init]

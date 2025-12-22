@@ -8,7 +8,7 @@ parts:
     - file: schedule
     - file: instructions
     - file: contact_information
-    - url: https://brightspace.tudelft.nl/d2l/home/680476
+    - url: https://brightspace.tudelft.nl/d2l/home/774444
       title: Brightspace announcements 📢
   - caption: Activities
     chapters:

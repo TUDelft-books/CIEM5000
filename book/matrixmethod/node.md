@@ -14,7 +14,7 @@ kernelspec:
 ```{margin}
 
 ::::::{attention}
-This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
 ```
@@ -26,22 +26,22 @@ This page shows a preview of the `matrixmethod` package. Please fork and clone t
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_1
 :text: "All files practice assignments with solutions workshop 1"
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_2
 :text: "All files practice assignments with solutions workshop 2"
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_additional_exercises
 :text: "All files practice assignments with solutions additional exercises"
 ```
 

@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.2
+    jupytext_version: 1.17.2
 kernelspec:
   display_name: base
   language: python
@@ -14,15 +14,11 @@ kernelspec:
 ```{margin}
 
 ::::::{attention}
-This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
-::::::{versionadded} v2025.1.0 After workshop 1
+::::::{versionadded} v2026.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
-::::::
-
-::::::{versionchanged} v2025.0.3 2025-02-10 13:33, before workshop 1
-Fixed typo in [Exercise 2.6](exercise2.6)
 ::::::
 
 ```
@@ -33,7 +29,7 @@ In this notebook you will implement the matrix method and check it with some san
 
 +++
 
-Our matrix method implementation is now completely stored in a local package, consisting of three classes. If you need a refresher on how to code with Classes and Objects, refer to the [section on Object Oriented Programming in the MUDE-book](https://mude.citg.tudelft.nl/2024/book/external/learn-programming/book/python/oop/classes.html), with additionally [programming assignment 1.7](https://mude.citg.tudelft.nl/2024/files/Week_1_7/PA_1_7_classy_distributions.html)
+Our matrix method implementation is now completely stored in a local package, consisting of three classes. If you need a refresher on how to code with Classes and Objects, refer to the [section on Object Oriented Programming in the MUDE-book](https://mude.citg.tudelft.nl/book/2025/programming/week_2_1.html), with additionally [programming assignment 2.1](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA2.1/README.html). A recap on local packages can be found in the [MUDE book too](https://mude.citg.tudelft.nl/book/2025/programming/week_2_5.html), with additionally [programming assignment 2.5](https://mude.citg.tudelft.nl/workbook-2025/assignments/PA2.5/README.html).
 
 +++
 
@@ -52,12 +48,12 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_1
 :text: "All files practice assignments solutions workshop 1"
 :replace_default: "False"
 ```
@@ -184,8 +180,8 @@ Add the missing pieces to the code in `./matrixmethod/elements.py`, before you p
 ```
 
 (exercise2_1_text_name)=
-````{solution} exercise2.1
-:class: dropdown
+````{admonition} Solution
+:class: solution
 
 The stiffness matrix is specified in the global coordinate system.
 
@@ -452,8 +448,8 @@ However, the implementation is incomplete:
 Add the missing pieces to the code, before you perform the check below
 ```
 
-````{solution} exercise3.1
-:class: dropdown
+````{admonition} Solution
+:class: solution
 
 For the code implementations see `./matrixmethod/constrainer.py`: [`constrain`](exercise3_1_py)
 ````

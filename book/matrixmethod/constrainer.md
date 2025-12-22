@@ -13,18 +13,18 @@ kernelspec:
 
 ```{margin}
 
-::::::{versionadded} v2025.2.0 After workshop 2
+::::::{versionadded} v2026.2.0 After workshop 2
 Solutions workshop 2 and additional assignments in text and downloads 
 ::::::
 
-::::::{versionadded} v2025.1.0 After workshop 1
+::::::{versionadded} v2026.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
 ::::::
 
 ::::::{attention}
-This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 
-After each workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments)
+After each workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
 ```
