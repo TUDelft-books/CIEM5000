@@ -117,6 +117,7 @@ for elem in elems:
 :class: dropdown
 
 For the given parameter values, if your implementation is fully correct, you should get the following nodal displacements and support reactions:
+
 $$
 \mathbf{u}_\mathrm{free} = \left[-0.09274451, -0.13310939,  0.51159348, -0.01644455\right]
 $$
