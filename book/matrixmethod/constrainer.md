@@ -13,10 +13,6 @@ kernelspec:
 
 ```{margin}
 
-::::::{versionadded} v2026.2.0 After workshop 2
-Solutions workshop 2 and additional assignments in text and downloads 
-::::::
-
 ::::::{versionadded} v2026.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
 ::::::
@@ -37,7 +33,7 @@ After each workshop, the solution will be added to this preview and to the [GitH
 ```
 
 ```{custom_download_link} ./matrixmethod_solution/constrainer.py
-:text: ".py solution workshop 1, 2 and additonal assignments"
+:text: ".py solution workshop 1"
 :replace_default: "False"
 ```
 
@@ -49,15 +45,6 @@ After each workshop, the solution will be added to this preview and to the [GitH
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
 :text: "All files practice assignments with solutions workshop 1"
 :replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
-:text: "All files practice assignments with solutions workshop 1"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
-:text: "All files practice assignments with solutions additional exercises"
 ```
 
 ```{code-cell} ipython3
@@ -172,26 +159,6 @@ class Constrainer:
 ```
 
 +++
-
-(2_exercise3_1_py_1)=
-```{solution-start} 2_exercise3.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-        self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
-        
-        Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
-        Kfc = k[np.ix_(self.free_dofs,self.cons_dofs)]
-        Ff = f[self.free_dofs]
-
-        return Kff, Ff - np.matmul(Kfc,self.cons_vals)
-```
-
-```{solution-end}
-```
-
-+++
         
 ```{code-cell} ipython3
     def support_reactions (self,k,u_free,f):       
@@ -213,23 +180,6 @@ class Constrainer:
 
 +++
 
-(2_exercise3_1_py_2)=
-```{solution-start} 2_exercise3.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-        Kcf = k[np.ix_(self.cons_dofs,self.free_dofs)]
-        Kcc = k[np.ix_(self.cons_dofs,self.cons_dofs)]
-
-        return np.matmul(Kcf,u_free) + np.matmul(Kcc,self.cons_vals) - f[self.cons_dofs]
-```
-
-```{solution-end}
-```
-
-+++
-        
 ```{code-cell} ipython3
     def __str__(self):
         """
