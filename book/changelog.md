@@ -11,7 +11,7 @@ This changelog will include all changes, except for minor adjustments like typos
 - Added solutions workshop 1 to downloads [ matrixmethod package - `node.py`](./matrixmethod/node.md)
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `elements.py`](./matrixmethod/elements.md)
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `constrainer.py`](./matrixmethod/constrainer.md)
-- Full changelog [](https://github.com/TUDelft-books/CIEM5000/book/releases/tag/v2026.1.0)
+- Full changelog [here](https://github.com/TUDelft-books/CIEM5000/book/releases/tag/v2026.1.0)
 
 ## v2026.0.0, start course
 - Prepared material for new course edition 2026.
