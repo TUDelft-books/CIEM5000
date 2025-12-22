@@ -17,10 +17,6 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
-::::::{versionadded} v2026.1.0 After workshop 1
-Solutions workshop 1 in text and downloads 
-::::::
-
 ```
 
 # Apply
@@ -38,11 +34,6 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "True"
 ```
 
-```{custom_download_link} ./Workshop_1_Apply_stripped_sol.ipynb
-:text: ".ipynb solution"
-:replace_default: "False"
-```
-
 ```{custom_download_link} ./Workshop_1_Apply.md
 :text: ".md:myst"
 :replace_default: "False"
@@ -50,11 +41,6 @@ Our matrix method implementation is now completely stored in a local package, co
 
 ```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_1
-:text: "All files practice assignments solutions workshop 1"
 :replace_default: "False"
 ```
 
@@ -164,112 +150,4 @@ ODE_shear = #YOUR CODE HERE
 ```
 
 ```{exercise-end}
-```
-
-```{solution-start} exercise_ws_1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-:tags: [thebe-init]
-
-mm.Node.clear()
-mm.Element.clear()
-```
-
-```{code-cell} ipython3
-:tags: [thebe-init]
-
-h = 1
-b = 1
-EIr = 10000
-EIk = 1000
-EA  = 1e10
-H = 100
-
-nodes = []
-
-nodes.append(mm.Node(0,0))
-nodes.append(mm.Node(b,0))
-nodes.append(mm.Node(b,-h))
-nodes.append(mm.Node(0,-h))
-
-elems = []
-
-elems.append(mm.Element(nodes[0], nodes[1]))
-elems.append(mm.Element(nodes[1], nodes[2]))
-elems.append(mm.Element(nodes[2], nodes[3]))
-elems.append(mm.Element(nodes[0], nodes[3]))
-
-beams = {}
-columns = {}
-beams['EI'] = EIr
-beams['EA'] = EA
-columns['EI'] = EIk
-columns['EA'] = EA
-
-elems[0].set_section (beams)
-elems[1].set_section (columns)
-elems[2].set_section (beams)
-elems[3].set_section (columns)
-
-for elem in elems:
-    print(elem)
-
-con = mm.Constrainer()
-
-con.fix_dof (nodes[0], 0)
-con.fix_dof (nodes[0], 1)
-con.fix_dof (nodes[1], 1)
-
-nodes[3].add_load ([H,0,0])
-```
-
-```{code-cell} ipython3
-:tags: [thebe-init]
-
-global_k = np.zeros ((3*len(nodes), 3*len(nodes)))
-global_f = np.zeros (3*len(nodes))
-
-for elem in elems:
-    elmat = elem.stiffness()
-    idofs = elem.global_dofs()
-    
-    global_k[np.ix_(idofs,idofs)] += elmat
-
-for node in nodes:
-    global_f[node.dofs] += node.p
-```
-
-```{code-cell} ipython3
-:tags: [thebe-init]
-
-Kff, Ff = con.constrain ( global_k, global_f )
-u = np.matmul ( np.linalg.inv(Kff), Ff )
-print(u)
-```
-
-```{code-cell} ipython3
-:tags: [thebe-init]
-
-#provided in case you want to solve the shear beam problem using SymPy
-import sympy as sym
-
-x, k, L, H = sym.symbols('x, k, L, H')
-w = sym.Function('w')
-
-ODE_shear = sym.Eq(w(x).diff(x, 2) *k, 0)
-w = sym.dsolve(ODE_shear, w(x)).rhs
-
-gamma = w.diff(x)
-V = k * gamma
-eq1 = sym.Eq(w.subs(x,0),0)
-eq2 = sym.Eq(V.subs(x,L),H)
-C_sol = sym.solve([eq1, eq2], sym.symbols('C1, C2'))
-display(w.subs(C_sol))
-```
-
-As derived above, the displacement of a shear beam equals $w = \cfrac{Hx}{k}$. With $k = \cfrac{24}{h\left(\cfrac{h}{EI_k}+\cfrac{b}{EI_r}\right)} = \cfrac{24}{h\left(\cfrac{1}{1000}+\cfrac{1}{10000}\right)} \approx 21818$ this gives $w = \cfrac{100\cdot 1}{28181} \approx 0.0045833$ which is equal to `u[6]`, corresponding to the horizontal displacement of the top left node.
-
-```{solution-end}
 ```
