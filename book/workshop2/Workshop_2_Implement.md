@@ -17,6 +17,10 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
+::::::{versionadded} v2026.2.0 After workshop 2
+Solutions workshop 2 in text and downloads 
+::::::
+
 ```
 
 # Implementation
@@ -30,6 +34,11 @@ In this notebook you will continue to implement the matrix method and check it w
 :replace_default: "True"
 ```
 
+```{custom_download_link} ./Workshop_2_Implement_stripped_sol.ipynb
+:text: ".ipynb solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} ./Workshop_2_Implement.md
 :text: ".md:myst"
 :replace_default: "False"
@@ -39,6 +48,12 @@ In this notebook you will continue to implement the matrix method and check it w
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
+
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_workshop_2
+:text: "All files practice assignments with solutions workshop 2"
+:replace_default: "False"
+```
+
 
 ```{exercise} 0
 :label: exercise0
@@ -98,6 +113,15 @@ The implementation is incomplete:
 Add the missing pieces to the code, before you perform the checks below.
 ```
 
+````{admonition} Solution
+:class: solution
+
+For the code implementations see `./matrixmethod/elements.py`:
+- [`add_distributed_load`](2_exercise2_1_py_1)
+- [`bending_moments`](2_exercise2_1_py_2)
+- [`full_displacement`](2_exercise2_1_py_3)
+````
+
 +++
 
 Having made your implementations, it is now time to verify the first addition of your code with a simple sanity check. We would like to solve the following simply-supported beam:
@@ -128,6 +152,44 @@ print(#YOUR ELEMENT HERE
 ```{exercise-end}
 ```
 
+```{solution-start} 2_exercise2.2
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EI = 1000
+q  = 10
+L  = 1
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = EI
+
+elem.set_section (section)
+
+elem.add_distributed_load([0,10])
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+print(elem)
+```
+
+- The vertical forces correspond to the solution from [](../lecture2/element_loads.md) $\cfrac{1}{2}qL=\cfrac{1}{2}\cdot 10 \cdot 1=5$
+- The moments correspond to the solution from [](../lecture2/element_loads.md) $\cfrac{1}{12}qL^2=\cfrac{1}{12}\cdot 10 \cdot 1^2 \approx 0.833$
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 2 - 2.3
 :label: 2_exercise2.3
 :nonumber: true
@@ -142,6 +204,36 @@ Now solve the nodal displacements. Once you are done, compare the rotation at th
 
 ```{exercise-end}
 ```
+
+```{solution-start} 2_exercise2.3
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+con = mm.Constrainer()
+
+con.fix_dof (node1,0)
+con.fix_dof (node1,1)
+con.fix_dof (node2,1)
+print(con)
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+```
+
+The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot EI} = \cfrac{10 \cdot 1^3}{24\cdot 1000} \approx 0.0004166$
+
+```{solution-end}
+```
+
 
 ```{exercise-start} Workshop 2 - 2.4
 :label: 2_exercise2.4
@@ -159,6 +251,24 @@ u_elem = con.full_disp(#YOUR CODE HERE)
 ```{exercise-end}
 ```
 
+```{solution-start} 2_exercise2.4
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+u_elem = con.full_disp(u_free)[elem.global_dofs()] #keep this line
+moments = elem.bending_moments(u_elem,3)
+print(moments)
+elem.plot_moment_diagram(u_elem,num_points=51)
+```
+
+- The moment corresponds with the well known solution $\cfrac{1}{8}qL^2=\cfrac{1}{8}\cdot 10 \cdot 1^2 = 1.25$
+- The shape is parabolic, as expected.
+
+```{solution-end}
+```
+
 ```{exercise-start} Workshop 2 - 2.5
 :label: 2_exercise2.5
 :nonumber: true
@@ -172,6 +282,23 @@ Calculate the deflection at midspan and plot the deflected structure using `plot
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} 2_exercise2.5
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+deflections = elem.full_displacement(u_elem,3)
+print(deflections)
+elem.plot_displaced(u_elem,num_points=51,global_c=False)
+```
+
+- The deflection corresponds with the forget-me-not solution $\cfrac{5}{384} \cfrac{qL^4}{EI}=\cfrac{5}{384} \cfrac{10 \cdot 1^4}{1000} \approx 0.0001302$
+- The shape of the deflection is a 4th order polynomial, as expected.
+
+```{solution-end}
 ```
 
 ## 3. The Constrainer class
@@ -188,6 +315,14 @@ We're going to expand our Constrainer class, but the implementation is incomplet
 Add the missing pieces to the code and docstring, before you perform the checks below.
 
 ```
+
+````{admonition} Solution
+:class: solution
+
+For the code implementations see `./matrixmethod/constrainer.py`:
+- [`constrain`](2_exercise3_1_py_1)
+- [`support_reactions`](2_exercise3_1_py_2)
+````
 
 +++
 
@@ -218,6 +353,57 @@ Use the code blocks below to set up and solve this problem and check the require
 ```{exercise-end}
 ```
 
+```{solution-start} 2_exercise3.2
+```
+
+- The displacements will be zero, as everything is fixed
+- The support reactions should be each $\cfrac{1}{2}qL = \cfrac{1}{2}\cdot 10 \cdot 1 = 5$ to the left
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EA = 1000
+q = 10
+L  = 1
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EA'] = EA
+
+elem.set_section (section)
+elem.add_distributed_load([q,0])
+print(elem)
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+con.fix_node (node2)
+
+print(con)
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+
+print(con.support_reactions(global_k,u_free,global_f))
+```
+
+```{solution-end}
+```
+
 Again, we're going to verify our implementation. Therefore, we're going solve a beam, with a load $F$ and support displacement $\bar w$ for the right support.
 
 ```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/sanitycheck_3.3_new.png
@@ -240,4 +426,75 @@ Use the code blocks below to set up and solve this problem and check the require
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} 2_exercise3.3
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EI = 1000
+F  = 10
+L  = 1
+w_B = 0.1
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+node2.add_load([0,F,0])
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = EI
+
+elem.set_section (section)
+
+print(elem)
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+con.fix_dof (node2,1,w_B)
+
+print(con)
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+
+print(con.support_reactions(global_k,u_free,global_f))
+```
+
+- The rotation at B corresponds with the forget-me-not solution $\cfrac{3}{2} \cfrac{w_B}{L}=\cfrac{3}{2} \cdot \cfrac{0.1}{1} = 0.15$
+- The moment at A corresponds with the ODE solution of $\cfrac{3  EI}{L^2 w_B}=\cfrac{3 \cdot 1000}{1^2 \cdot 0.1} = 300$
+- The vertical support reaction at A corresponds with the ODE solution of $\cfrac{3  EI}{L^3 w_B}=\cfrac{3 \cdot 1000}{1^3 \cdot 0.1} = 300$
+- The vertical support reaction at B corresponds with the ODE solution of $\cfrac{3  EI}{L^3 w_B}=\cfrac{3 \cdot 1000}{1^3 \cdot 0.1} = 300$ minus the load $F = 10$. The $10$ and $290$ together are equal to the reaction force of $300$
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+u_elem = con.full_disp(u_free)[elem.global_dofs()]
+elem.plot_moment_diagram(u_elem,num_points=51)
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+deflections = elem.full_displacement(u_elem,3)
+elem.plot_displaced(u_elem,num_points=51,global_c=False)
+```
+
+- The moment line and displacement line look as expected.
+
+```{solution-end}
 ```

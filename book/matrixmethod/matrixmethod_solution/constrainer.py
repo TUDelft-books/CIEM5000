@@ -37,7 +37,6 @@ class Constrainer:
             value (float, optional): The value to fix the degree of freedom at. Defaults to 0.
         """
         self.cons_dofs.append(node.dofs[dof])
-        assert value == 0, "Only zero values are supported for now."
         self.cons_vals.append(value)
  
     def fix_node (self, node):
@@ -81,9 +80,10 @@ class Constrainer:
         self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
         
         Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
+        Kfc = k[np.ix_(self.free_dofs,self.cons_dofs)]
         Ff = f[self.free_dofs]
 
-        return Kff, Ff
+        return Kff, Ff - np.matmul(Kfc,self.cons_vals)
 
     def support_reactions (self,k,u_free,f):       
         """
@@ -97,9 +97,10 @@ class Constrainer:
         Returns:
             numpy.ndarray: The support reactions.
         """
-        #YOUR CODE HERE
+        Kcf = k[np.ix_(self.cons_dofs,self.free_dofs)]
+        Kcc = k[np.ix_(self.cons_dofs,self.cons_dofs)]
         
-        return #YOUR CODE HERE
+        return np.matmul(Kcf,u_free) + np.matmul(Kcc,self.cons_vals) - f[self.cons_dofs]
 
     def __str__(self):
         """
