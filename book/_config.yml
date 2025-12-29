@@ -27,7 +27,7 @@ sphinx:
       use_issues_button : true
       launch_buttons:
         thebe: true
-      announcement: "<p>This book is from the 2024-25 academic year. The version currently used in education is at <a href='https://oit.tudelft.nl/CIEM5000/' style='color: cyan;'>oit.tudelft.nl/CIEM5000/book</a></p>"
+      announcement: "<p>This book is from the 2024-25 academic year. The version currently used in education is at <a href='https://oit.tudelft.nl/CIEM5000/' style='color: cyan;'>oit.tudelft.nl/CIEM5000</a></p>"
     html_show_copyright: false
     html_last_updated_fmt: '%B %-d, %Y'
     html_static_path: ["figures"] # add folders that contain files that need to be included, such as the location of the logo(s)
