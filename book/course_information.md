@@ -24,9 +24,9 @@ The learning will be assessed with one assignment provided to you after the seco
 
 This assignment is part of the Assignment Portfolio of unit 2, where it counts for 33%. This portfolio will account for 20% of your total grade of CIEM5000.
 
-%The deadline of the assignment is April 19th, 23:59, although you're encouraged to finish it directly after completing workshop 2. Doing so allows you to split the workload evenly.
+The deadline of the assignment is April 19th, 23:59, although you're encouraged to finish it directly after completing workshop 2. Doing so allows you to split the workload evenly.
 
-%You can take the resit of this assignment in Q4. If you choose to do so, you can improve your first submission. The deadline of the resit is June 21th, 23:59.
+You can take the resit of this assignment in Q4. If you choose to do so, you can improve your first submission. The deadline of the resit is June 21th, 23:59.
 
 %The assignment is graded according to the following rubric:
 %
