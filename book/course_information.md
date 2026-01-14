@@ -28,21 +28,19 @@ The deadline of the assignment is April 19th, 23:59, although you're encouraged 
 
 You can take the resit of this assignment in Q4. If you choose to do so, you can improve your first submission. The deadline of the resit is June 21th, 23:59.
 
-%The assignment is graded according to the following rubric:
-%
-%:::{table} Rubric
-%:widths: auto
-%:align: center
-%:name: rubric
-%
-%| Criteria | Insufficient | Sufficient | Good|
-%| --- | --- | --- | --- |
-%| New implementations | 1.4 points <br> Not all implementations for correct nodal displacements were made <br> OR <br> Implementations are not correct | 2.0125 points <br> Implementations for correct nodal displacements are correct <br> AND <br> Argumentation is not correct, insufficient or missing | 3.5 points <br> Implementations for correct nodal displacements are correct <br> AND <br> Argumentation is correct and sufficient |
-%| Sanity checks | 1.4 points <br> Not for all implementations for correct nodal displacements sanity checks were performed<br>OR<br>Argumentation is not correct, insufficient or missing | 2.0125 points <br> For all implementations for correct nodal displacements sanity checks were performed | 3.5 points <br> Sanity checks were performed for all new code implementations were performed <br>AND<br>Argumentation is correct and sufficient |
-%| Numerical results | 0.8 points <br> Not all results are correct<br>OR<br>Not all required implementations were made | 1.15 points<br>At least nodal displacements are correct with only a few inconsistencies in other results | 2 points <br> All results are correct |
-%| Style | 0.4 points <br> Coding is unclear<br>OR<br>Report is unclear<br>If too much is missing or unclear, the full assignment is graded with a 1 | 0.575 points<br> Coding and report are readable and functional | 1 points <br> Coding and report are well documented |
-%
-%:::
+The assignment is graded according to the following rubric:
+
+:::{table} Rubric
+:widths: auto
+:align: center
+:name: rubric
+
+| Criteria | Insufficient | Sufficient | Okay | Good|
+| --- | --- | --- | --- | --- |
+| Modelling | 0.6 points <br> Incorrect modelling for correct nodal displacement | 3.45 points <br> Correct modelling for nodal displacements is correct <br> AND <br> Incorrect modelling for normal force distribution | 4.5 points <br> Correct modelling for nodal displacement and normal force distribution  <br> AND <br> Incorrect modelling for free body diagrams | 6 points <br> Fully correct modelling |
+| Numerical results | 0.4 points <br> Incorrect modelling for nodal displacements <br> OR <br> Incorrect numerical results for nodal displacements <br> Ignoring minor mistakes| 2.3 points<br> Correct numerical results for nodal displacements <br> AND <br> Incorrect numerical results for normal force distribution <br> Ignoring minor mistakes | 3 points <br> Correct numerical results for nodal displacements and normal force distribution <br> AND <br>( <br> Incorrect free body diagram <br> OR <br> minor mistakes <br>). | 4 points <br> Fully correct numerical results |
+
+:::
 
 The assignment is not made under surveillance. You are allowed to collaborate, but you'll need to hand in your own work. You'll have to submit your work to a personal GitHub repository.
 
