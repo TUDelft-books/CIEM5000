@@ -21,7 +21,7 @@ When you've finished the workshops, you can start with the graded assignment You
 ```{figure} figures/graded_assignment_2026.svg
 :align: center
 :source: https://github.com/CIEM5000-TU-Delft/prepare_assignments/blob/solution_2026/student_files/graded_assignment_2026.vsdx
-:nonumber:
+:number:
 ```
 
 hich is an exotic mix of the Petronas Twin Towers and the Burj Khalifa.
