@@ -24,7 +24,7 @@ When you've finished the workshops, you can start with the graded assignment You
 :nonumber:
 ```
 
-hich is an exotic mix between the Petronas Twin Towers and the Burj Khalifa.
+hich is an exotic mix of the Petronas Twin Towers and the Burj Khalifa.
 
 You need to answer the following questions in your report:
 1. Explain in words and math how you adapted/added code and/or procedures to solve this structure.
