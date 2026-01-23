@@ -16,10 +16,24 @@
 %:replace_default: "False"
 %```
 
-When you've finished the workshops, you can start with the graded assignment. The process is very similar to the workshops, but now there's a deadline and you're required to write a report. You're going to solve the following model for displacements and internal forces using the Matrix Method.
+When you've finished the workshops, you can start with the graded assignment You're going to solve the following structural model for displacements and internal forces using the matrix method:
 
-%```{figure} figures/graded_assignment.svg
-%```
+```{figure} figures/graded_assignment_2026.svg
+:align: center
+:source: https://github.com/CIEM5000-TU-Delft/prepare_assignments/blob/solution_2026/student_files/graded_assignment_2026.vsdx
+:nonumber:
+```
+
+hich is an exotic mix between the Petronas Twin Towers and the Burj Khalifa.
+
+You need to answer the following questions in your report:
+1. Explain in words and math how you adapted/added code and/or procedures to solve this structure.
+2. Make a table of all nodal displacement and show the displaced structure in a figure. Indicate how you identify nodes.
+3. Show the normal force diagram of the structure in a figure.
+4. Provide a figure of a free body diagram of the full structure in which you show all the forces working on the structure (including support reactions) with numerical values from your code. This specific figure can be hand drawn.
+5. Provide a figure of a free body diagram of the indicated node with numerical values from your code. This specific figure can be hand drawn.
+
+Then, add potential new implementations to your code in `./matrixmethod/`. Please note that `./matrixmethod/` doesn't include any solutions from the workshops. Add new `.py` or `.ipynb` files to solve the structure outside of `./matrixmethod/`. Add a report in `.pdf` or `.md` format in which you included answers and reasoning for all the questions. Make sure all the values/figures you use in the report are solved/created with your code. Except for question 4 and 5: the free-body-diagrams can be hand-drawn.
 
 The deadline of the assignment is April 19th, 23:59, although you’re encouraged to finish it directly after completing workshop 2. Doing so allows you to split the workload evenly. Commit and push all your files to the provided GitHub Classroom repository to hand in your assignment. Your latest commit before the deadline in the `main` branch will be graded. Incomplete assignments will be graded with a 1. The full solution won't be provided.
 
