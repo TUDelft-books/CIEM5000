@@ -39,6 +39,6 @@ These equations could also be regarding in a vector formulation. If $\mathbf{f}^
 $$\begin{align} -\sum_e\mathbf{f}^e + \mathbf{f}_\text{nodal}& = \mathbf{0}\\
 \sum_e\mathbf{f}^e& = \mathbf{f}_\text{nodal} \end{align}$$
 
-All that's needed now is to solve our linear set of equations for our unknown nodal displacements. Luckily the amount of equations equals the amount of unknowns, so you should have no problem solving this! Take into account that one displacement is already known: $u_1 = 0$. Without this, the matrix is singular.
+All that's needed now is to solve our linear set of equations for our unknown nodal displacements. Luckily the amount of equations equals the amount of unknowns, so you should have no problem solving this! Take into account that one displacement is already known: $u_1 = 0$. Without this, the system of equations is singular.
 
 However, solving our vector formulation is not trivial. $\mathbf{f}^e$ still contains our unknown nodal displacements hidden inside the vector. Let's split the vector on the next page to reach our final form of the matrix method formulation.
