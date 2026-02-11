@@ -3,13 +3,15 @@
 
 You can refer to this book as:
 
-> Tom van Woudenberg and Iuri Rocha from Delft University of Technology (2026) _Matrix method in statics_. https://oit.tudelft.nl/CIEM5000/2025. Source files at https://github.com/TUDelft-books/CIEM5000
+> Tom van Woudenberg and Iuri Rocha from Delft University of Technology (2026) _Matrix method in statics_. https://oit.tudelft.nl/CIEM5000/2026. Source files at https://github.com/TUDelft-books/CIEM5000
 
 You can refer to individual chapters or pages within this book as:
 
-> `<Title of Chapter or Page>`. In Tom van Woudenberg and Iuri Rocha from Delft University of Technology (2026) _Matrix method in statics_. https://oit.tudelft.nl/CIEM5000/2025/<relative link to page>. Source files at https://github.com/TUDelft-books/CIEM5000: `./book/<path to file(s)>` chapter, accessed `date`.
+> `<Title of Chapter or Page>`. In Tom van Woudenberg and Iuri Rocha from Delft University of Technology (2026) _Matrix method in statics_. https://oit.tudelft.nl/CIEM5000/2026/<relative link to page>. Source files at https://github.com/TUDelft-books/CIEM5000: `./book/<path to file(s)>` chapter, accessed `date`.
 
-We anticipate that the content of this book will change significantly. Therefore, we recommend using the source code directly with the citation above that refers to the GitHub repository and lists the date and name of the file. Although content will be added over time, chapter titles and URL's in this book are expected to remain relatively static. However, we make no guarantee, so if it is important for you to reference a specific location/commit within the book.
+We anticipate that the content of this book will change significantly during the run of this course. Therefore, we recommend using the source code directly with the citation above that refers to the GitHub repository and lists the date and name of the file. Although content will be added over time, chapter titles and URL's in this book are expected to remain relatively static. However, we make no guarantee, so if it is important for you to reference a specific location/commit within the book.
+
+The most recent complete version of this book is the [2024/2025 version of this book](https://oit.tudelft.nl/CIEM5000/2025/).
 
 ## How the book is made
 
