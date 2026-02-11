@@ -13,6 +13,10 @@ kernelspec:
 
 ```{margin}
 
+::::::{versionadded} v2026.1.0 After workshop 1
+Solutions workshop 1 in text and downloads 
+::::::
+
 ::::::{attention}
 This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 
@@ -28,8 +32,18 @@ After each workshop, the solution will be added to this preview and to the [GitH
 :replace_default: "False"
 ```
 
+```{custom_download_link} ./matrixmethod_solution/constrainer.py
+:text: ".py solution workshop 1"
+:replace_default: "False"
+```
+
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments with solutions workshop 1"
 :replace_default: "False"
 ```
 
@@ -122,6 +136,26 @@ class Constrainer:
         Ff # YOUR CODE HERE
 
         return Kff, Ff
+```
+
++++
+
+(exercise3_1_py)=
+```{solution-start} exercise3.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
+        
+        Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
+        Ff = f[self.free_dofs]
+
+        return Kff, Ff
+```
+
+```{solution-end}
 ```
 
 +++
