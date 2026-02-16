@@ -2,6 +2,9 @@
 
 This changelog will include all changes, except for minor adjustments like typos.
 
+## v2026.1.1, 2026-02-16 17:00
+- Updated lecture slides lecture 2
+
 (v2026.1.0)=
 ## v2026.1.0, 2026-02-13 17:30, after workshop 1
 - Added solutions workshop 1 to downloads [Activities - Workshop 1](./workshop1.md)
