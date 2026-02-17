@@ -1,20 +1,20 @@
-%```{margin}
-%
-%::::::{attention}
-%This page shows the graded assignment. 
-%
-%Please open the assignment from [GitHub Classroom](https://classroom.github.com/a/NIabj19c) to work on it locally. The solution won't be provided.
-%::::::
-%
-%```
+```{margin}
+
+::::::{attention}
+This page shows the graded assignment. 
+
+Please open the assignment from [GitHub Classroom](https://classroom.github.com/a/Pu4INjCT) to work on it locally. The solution won't be provided.
+::::::
+
+```
 
 
 # Graded assignment
 
-%```{custom_download_link} https://classroom.github.com/a/NIabj19c
-%:text: "GitHub Classroom repository"
-%:replace_default: "False"
-%```
+```{custom_download_link} https://classroom.github.com/a/Pu4INjCT
+:text: "GitHub Classroom repository"
+:replace_default: "False"
+```
 
 When you've finished the workshops, you can start with the graded assignment You're going to solve the following structural model for displacements and internal forces using the matrix method:
 
