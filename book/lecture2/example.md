@@ -245,8 +245,8 @@ $$\left[ \begin{matrix}
 
 Solving this system of equations gives:
 
-- $\varphi_2 \approx 1 \cdot 10^{-4}$
-- $\varphi_3 \approx 1.6 \cdot 10^{-3}$
+- $\varphi_2 \approx 1 \cdot 10^{-4} \, \rm{rad}$
+- $\varphi_3 \approx 1.6 \cdot 10^{-3} \, \rm{rad}$
 
 The support reactions can be found by inserting these into our original system of equations and solving for the rows containing the support reactions:
 
@@ -270,9 +270,9 @@ $$\left[ \begin{matrix}
 Note that to calculate $M_{t,4}$ the element load should be taken into account!
 This gives:
 
-- $M_1 \approx 0.1 \text{ kNm}$
-- $M_{t,4} \approx -0.033 \text{ kNm}$
-- $M_{t,5} \approx -2.7 \text{ kNm}$
+- $M_1 \approx 0.1 \, \rm{ kNm}$
+- $M_{t,4} \approx -0.033 \, \rm{ kNm}$
+- $M_{t,5} \approx -2.7 \, \rm{ kNm}$
 
 ## Postprocessing moments element $\left(1\right)$
 
@@ -288,7 +288,7 @@ M \left(x\right) = EI \kappa=EI\left( \cfrac{6x}{\ell^2} - \cfrac{2}{\ell} \righ
 
 This is a linear distribution, with values at $x=0$ and $x=\ell$:
 
-- $M \left(0\right) \approx -0.1 \text{ kNm}$
-- $M \left(2\right) \approx 0.2 { kNm} $
+- $M \left(0\right) \approx -0.1 \, \rm{kNm}$
+- $M \left(2\right) \approx 0.2 \, \rm{kNm} $
 
 The value at $x=0$ has indeed the same absolute value as the support reactions. The sign is different because $M_1$ is defined in the global coordinate system and $M \left(0\right)$ is defined from our agreements on positive internal moments (leading to positive stresses at the positive $z$-side.)
