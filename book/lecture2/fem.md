@@ -11,6 +11,11 @@ kernelspec:
   name: python3
 ---
 
+```{custom_download_link} fem.md
+:text: ".md:myst"
+:replace_default: "False"
+```
+
 # Finite element method vs. Matrix Method
 
 You've seen the finite element method before, which could be used to solve similar problems. But what are the differences?

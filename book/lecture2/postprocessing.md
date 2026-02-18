@@ -11,6 +11,11 @@ kernelspec:
   name: python3
 ---
 
+```{custom_download_link} postprocessing.md
+:text: ".md:myst"
+:replace_default: "False"
+```
+
 # Postprocessing for continuum fields
 
 Up until now, we've only looked at discrete results: nodal displacement and support reactions. However, these results can be used to obtain the continuum field.
