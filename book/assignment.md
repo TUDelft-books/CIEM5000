@@ -20,7 +20,7 @@ When you've finished the workshops, you can start with the graded assignment You
 
 ```{figure} figures/graded_assignment_2026.svg
 :align: center
-%:source: https://github.com/CIEM5000-TU-Delft/prepare_assignments/blob/solution_2026/student_files/graded_assignment_2026.vsdx
+:source: https://github.com/CIEM5000-TU-Delft/prepare_assignments/blob/solution_2026/student_files/graded_assignment_2026.vsdx
 
 $EI_{\rm{towers}} = 4000 e^{-\cfrac{x \, \rm{[m]}}{828}} \, \rm{GNm^2}$, $EA_{\rm{towers}} = 13 e^{-\cfrac{x \, \rm{[m]}}{828}} \, \rm{GN}$, $EI_{\rm{bridge}} = 4000 \, \rm{GNm^2}$, $EA_{\rm{bridge}} = 13 \, \rm{GN}$
 ```
