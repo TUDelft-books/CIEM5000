@@ -3,7 +3,7 @@
 This changelog will include all changes, except for minor adjustments like typos.
 
 ## v2026.2.0, 2026-02-17 9:00
-- Added [graded assignment](./assignment1.md))
+- Added [graded assignment](./assignment1.md)
 
 ## v2026.1.1, 2026-02-16 17:00
 - Updated lecture slides lecture 2
