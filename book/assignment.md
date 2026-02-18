@@ -3,7 +3,7 @@
 ::::::{attention}
 This page shows the graded assignment. 
 
-Please open the assignment from [GitHub Classroom](https://classroom.github.com/a/Pu4INjCT) to work on it locally. If that link doesn't work, use this backup link: https://classroom.github.com/a/HCEwEvOj.
+Please open the assignment from [GitHub Classroom](https://classroom.github.com/a/Pu4INjCT) to work on it locally. If that link doesn't work (Repository Access Issue’), use this backup link: https://classroom.github.com/a/HCEwEvOj and create a team using your student ID.
 ::::::
 
 ```
@@ -17,7 +17,7 @@ Please open the assignment from [GitHub Classroom](https://classroom.github.com/
 ```
 
 ```{custom_download_link} https://classroom.github.com/a/HCEwEvOj
-:text: "GitHub Classroom repository backup"
+:text: "GitHub Classroom repository backup, create a team using student ID"
 :replace_default: "False"
 ```
 
