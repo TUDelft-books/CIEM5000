@@ -596,153 +596,148 @@
 			<v:textRect cx="26.2205" cy="333.671" width="52.45" height="14.1732"/>
 			<rect x="0" y="326.585" width="52.4409" height="14.1732" class="st11"/>
 			<text x="8.39" y="337.27" class="st12" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>400 kN</text>		</g>
-		<g id="shape169-415" v:mID="169" v:groupContext="shape" transform="translate(326.359,-116.992)">
-			<title>Blad.169</title>
-			<rect v:rectContext="foreign" x="0" y="244.777" width="135.978" height="95.9811" class="st15"/>
-			<switch>
-				<foreignObject x="0" y="244.777" width="135.978" height="95.9811"
-						requiredExtensions="http://schemas.microsoft.com/visio/2003/SVGExtensions/">
-					<v:foreignData v:orgSize="21852" clip="rect(0 0 0 0)" v:data="data:metafile;base64,eNrtXFtvG0UUPnux49gpdkKoK
-								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"/>
-				</foreignObject>
-				<svg viewBox="0 0 174.77 123.54" enable-background="new" color-interpolation-filters="sRGB" clip="rect(0 0 0 0)"
-						height="95.9811" overflow="hidden" preserveAspectRatio="none" width="135.978" x="0" y="244.777">
-					<g transform="matrix(0.040211, 0, 0, 0.040365, 0, 0)">
-						<g stroke-width="9" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" fill="none">
-							<path fill="none" d="M2631,334 L3145,334 M2247,1228 L2761,1228"/>
-							<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="normal" font-weight="400"
-									font-size="222">
-								<text stroke="none" fill="#000000" x="0,55,127,296,740" y="0" transform="translate(2777,251)"
-										xml:space="preserve"> [m]</text>
-								<text stroke="none" fill="#000000" x="0,69,513" y="0" transform="translate(2483,389)"
-										xml:space="preserve">- </text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(4174,510)"
-										xml:space="preserve">2</text>
-								<text stroke="none" fill="#000000" x="0,111,222,666" y="0" transform="translate(2722,562)"
-										xml:space="preserve">828</text>
-								<text stroke="none" fill="#000000" x="0,55,127,296,740" y="0" transform="translate(2393,1145)"
-										xml:space="preserve"> [m]</text>
-								<text stroke="none" fill="#000000" x="0,69,513" y="0" transform="translate(2099,1283)"
-										xml:space="preserve">- </text>
-								<text stroke="none" fill="#000000" x="0,111,222,666" y="0" transform="translate(2338,1456)"
-										xml:space="preserve">828</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(3252,2039)"
-										xml:space="preserve">2</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(753,2943)"
-										xml:space="preserve">d</text>
-								<text stroke="none" fill="#000000" x="0,62,173,332,429,873" y="0" transform="translate(457,781)"
-										xml:space="preserve">tower</text>
-								<text stroke="none" fill="#000000" x="0,111,183,245,356,467,911" y="0"
-										transform="translate(454,2310)" xml:space="preserve">bridge</text>
-								<text stroke="none" fill="#000000" x="0,111,555" y="0" transform="translate(508,2943)"
-										xml:space="preserve">br</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(940,1675)"
-										xml:space="preserve">r</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(691,2943)"
-										xml:space="preserve">i</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(958,781)"
-										xml:space="preserve">s</text>
-								<text stroke="none" fill="#000000" x="0,62,173,332,776" y="0" transform="translate(511,1675)"
-										xml:space="preserve">towe</text>
-								<text stroke="none" fill="#000000" x="0,111,555" y="0" transform="translate(864,2943)"
-										xml:space="preserve">ge</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(1012,1675)"
-										xml:space="preserve">s</text>
-							</g>
-							<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="normal" font-weight="400"
-									font-size="384">
-								<text stroke="none" fill="#000000" x="0,192,384,576,1676,1772,2048,2324,3092" y="0"
-										transform="translate(1535,682)" xml:space="preserve">4000 GNm</text>
-								<text stroke="none" fill="#000000" x="0,192,1280,1376,1652,2420" y="0"
-										transform="translate(1547,1576)" xml:space="preserve">13 GN</text>
-								<text stroke="none" fill="#000000" x="0,96,312,432,624,816,1008,1212,1308,1584,1860,2628" y="0"
-										transform="translate(1077,2211)" xml:space="preserve"> = 4000 GNm</text>
-								<text stroke="none" fill="#000000" x="0,96,312,432,624,816,1008,1212,1308,1584,2352" y="0"
-										transform="translate(1131,2844)" xml:space="preserve"> = 4000 GN</text>
-								<text stroke="none" fill="#000000" x="0,96,312,1080" y="0" transform="translate(1103,682)"
-										xml:space="preserve"> = </text>
-								<text stroke="none" fill="#000000" x="0,96,312,1080" y="0" transform="translate(1157,1576)"
-										xml:space="preserve"> = </text>
-							</g>
-							<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="italic" font-weight="400"
-									font-size="222">
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(2654,251)"
-										xml:space="preserve">x</text>
-								<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(2270,1145)"
-										xml:space="preserve">x</text>
-							</g>
-							<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="italic" font-weight="400"
-									font-size="384">
-								<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,682)"
-										xml:space="preserve">EI</text>
-								<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,1576)"
-										xml:space="preserve">EA</text>
-								<text stroke="none" fill="#000000" x="0,768" y="0" transform="translate(2303,682)"
-										xml:space="preserve">e</text>
-								<text stroke="none" fill="#000000" x="0,768" y="0" transform="translate(1919,1576)"
-										xml:space="preserve">e</text>
-								<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,2211)"
-										xml:space="preserve">EI</text>
-								<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,2844)"
-										xml:space="preserve">EA</text>
-							</g>
-						</g>
-					</g>
-					<mask id="mfid1" fill-rule="evenodd" fill="white" stroke="none"/>
-				</svg>
-			</switch>
-			<rect v:rectContext="foreign" x="0" y="244.777" width="135.978" height="95.9811" class="st15"/>
-		</g>
-		<g id="shape170-418" v:mID="170" v:groupContext="shape" transform="translate(269.455,470.955) rotate(151.477)">
+		<g id="shape170-415" v:mID="170" v:groupContext="shape" transform="translate(269.455,470.955) rotate(151.477)">
 			<title>Blad.170</title>
 			<path d="M0 326.05 C25.14 319.23 58.65 334.75 53.22 339.54 C51.64 340.93 46.79 341.42 45.31 339.46 C41.94 334.99 56.09
 						 317.82 74.2 326.05" class="st17"/>
 		</g>
-		<g id="shape171-421" v:mID="171" v:groupContext="shape" transform="translate(0.375,-103.84)">
+		<g id="shape171-418" v:mID="171" v:groupContext="shape" transform="translate(0.375,-103.84)">
 			<title>Blad.171</title>
 			<desc>FBD?</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="23.3858" cy="321.624" width="46.78" height="38.2677"/>
 			<rect x="0" y="302.49" width="46.7717" height="38.2677" class="st15"/>
 			<text x="9.05" y="325.22" class="st12" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>FBD?</text>		</g>
-		<g id="group172-424" transform="translate(227.147,-28.7215)" v:mID="172" v:groupContext="group">
+		<g id="group172-421" transform="translate(227.147,-28.7215)" v:mID="172" v:groupContext="group">
 			<title>x-as.172</title>
-			<g id="shape173-425" v:mID="173" v:groupContext="shape" transform="translate(-3.87302E-12,-14.1732)">
+			<g id="shape173-422" v:mID="173" v:groupContext="shape" transform="translate(-3.87302E-12,-14.1732)">
 				<title>Blad.173</title>
 				<path d="M0 340.76 L22.62 340.76" class="st13"/>
 			</g>
+		</g>
+		<g id="shape174-427" v:mID="174" v:groupContext="shape" transform="translate(326.359,-116.992)">
+			<title>Blad.174</title>
+			<rect v:rectContext="foreign" x="0" y="244.777" width="135.978" height="95.9811" class="st15"/>
+			<switch>
+				<foreignObject x="0" y="244.777" width="135.978" height="95.9811"
+						requiredExtensions="http://schemas.microsoft.com/visio/2003/SVGExtensions/">
+					<v:foreignData v:dataType="ole" v:type="33280" v:orgSize="8704" v:data="data:metafile;base64,eNrtWF1oY0UUPnN
+								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"/>
+				</foreignObject>
+				<svg viewBox="0 0 1018 717.83" enable-background="new" color-interpolation-filters="sRGB" height="95.9811"
+						preserveAspectRatio="none" width="135.978" x="0" y="244.777">
+					<defs>
+						<clipPath id="mfid2">
+							<rect id="mfid3" x="0" y="0" width="1018" height="717.83"/>
+						</clipPath>
+					</defs>
+					<g clip-path="url(#mfid2)">
+						<mask id="mfid1" fill-rule="evenodd">
+							<g>
+								<rect width="1018" height="718" fill="white" stroke="none"/>
+							</g>
+						</mask>
+						<g mask="url(#mfid1)">
+							<g transform="matrix(0.23392, 0, 0, 0.23372, 0, 0)">
+								<g stroke-width="9" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" fill="none">
+									<path fill="none" d="M2631,334 L3145,334 M2247,1228 L2761,1228"/>
+									<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="normal" font-weight="400"
+											font-size="222">
+										<text stroke="none" fill="#000000" x="0,55,127,296,740" y="0"
+												transform="translate(2777,251)" xml:space="preserve"> [m]</text>
+										<text stroke="none" fill="#000000" x="0,69,513" y="0" transform="translate(2483,389)"
+												xml:space="preserve">- </text>
+										<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(4174,510)"
+												xml:space="preserve">2</text>
+										<text stroke="none" fill="#000000" x="0,111,222,666" y="0" transform="translate(2722,562)"
+												xml:space="preserve">828</text>
+										<text stroke="none" fill="#000000" x="0,55,127,296,740" y="0"
+												transform="translate(2393,1145)" xml:space="preserve"> [m]</text>
+										<text stroke="none" fill="#000000" x="0,69,513" y="0" transform="translate(2099,1283)"
+												xml:space="preserve">- </text>
+										<text stroke="none" fill="#000000" x="0,111,222,666" y="0" transform="translate(2338,1456)"
+												xml:space="preserve">828</text>
+										<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(3252,2039)"
+												xml:space="preserve">2</text>
+										<text stroke="none" fill="#000000" x="0,111,183,245,356,467,911" y="0"
+												transform="translate(454,2310)" xml:space="preserve">bridge</text>
+										<text stroke="none" fill="#000000" x="0,111,183,245,689" y="0"
+												transform="translate(508,2943)" xml:space="preserve">brid</text>
+										<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(789,781)"
+												xml:space="preserve">e</text>
+										<text stroke="none" fill="#000000" x="0,111,555" y="0" transform="translate(864,2943)"
+												xml:space="preserve">ge</text>
+										<text stroke="none" fill="#000000" x="0,62,173,429,501,945" y="0"
+												transform="translate(457,781)" xml:space="preserve">towrs</text>
+										<text stroke="none" fill="#000000" x="0,62,173,332,429,501,945" y="0"
+												transform="translate(511,1675)" xml:space="preserve">towers</text>
+									</g>
+									<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="normal" font-weight="400"
+											font-size="384">
+										<text stroke="none" fill="#000000" x="0,192,384,576,1676,1772,2048,2324,3092" y="0"
+												transform="translate(1535,682)" xml:space="preserve">4000 GNm</text>
+										<text stroke="none" fill="#000000" x="0,192,1280,1376,1652,2420" y="0"
+												transform="translate(1547,1576)" xml:space="preserve">13 GN</text>
+										<text stroke="none" fill="#000000" x="0,96,312,432,624,816,1008,1212,1308,1584,1860,2628"
+												y="0" transform="translate(1077,2211)" xml:space="preserve"> = 4000 GNm</text>
+										<text stroke="none" fill="#000000" x="0,96,312,408,600,792,888,1164,1932" y="0"
+												transform="translate(1131,2844)" xml:space="preserve"> = 13 GN</text>
+										<text stroke="none" fill="#000000" x="0,96,312,1080" y="0" transform="translate(1103,682)"
+												xml:space="preserve"> = </text>
+										<text stroke="none" fill="#000000" x="0,96,312,1080" y="0" transform="translate(1157,1576)"
+												xml:space="preserve"> = </text>
+									</g>
+									<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="italic" font-weight="400"
+											font-size="222">
+										<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(2654,251)"
+												xml:space="preserve">x</text>
+										<text stroke="none" fill="#000000" x="0,444" y="0" transform="translate(2270,1145)"
+												xml:space="preserve">x</text>
+									</g>
+									<g font-family="&#39;Times New Roman&#39;,roman,serif" font-style="italic" font-weight="400"
+											font-size="384">
+										<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,682)"
+												xml:space="preserve">EI</text>
+										<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,1576)"
+												xml:space="preserve">EA</text>
+										<text stroke="none" fill="#000000" x="0,768" y="0" transform="translate(2303,682)"
+												xml:space="preserve">e</text>
+										<text stroke="none" fill="#000000" x="0,768" y="0" transform="translate(1919,1576)"
+												xml:space="preserve">e</text>
+										<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,2211)"
+												xml:space="preserve">EI</text>
+										<text stroke="none" fill="#000000" x="0,234,1002" y="0" transform="translate(70,2844)"
+												xml:space="preserve">EA</text>
+									</g>
+								</g>
+							</g>
+						</g>
+						<mask id="mfid4" fill-rule="evenodd" fill="white" stroke="none">
+							<rect x="0" y="0" width="1018" height="718"/>
+						</mask>
+					</g>
+				</svg>
+			</switch>
+			<rect v:rectContext="foreign" x="0" y="244.777" width="135.978" height="95.9811" class="st15"/>
 		</g>
 	</g>
 </svg>
