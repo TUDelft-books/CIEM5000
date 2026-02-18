@@ -159,12 +159,12 @@ class Element:
         l = self.L
         self.q = np.array(q)
 
-        self.local_element_load # =[YOUR CODE HERE, , , , , ]
+        local_element_load = [0.5 * q[0] * l, 0.5 * q[1] * l, -1.0 / 12.0 * q[1] * l * l, 0.5 * q[0] * l, 0.5 * q[1] * l, 1.0 / 12.0 * q[1] * l * l]
 
-        global_element_load #YOUR CODE HERE
+        global_element_load = np.matmul(self.Tt, np.array(local_element_load))
 
-        self.nodes[0].add_load #YOUR CODE HERE
-        self.nodes[1].add_load #YOUR CODE HERE
+        self.nodes[0].add_load(global_element_load[0:3]) #YOUR CODE HERE
+        self.nodes[1].add_load(global_element_load[3:6]) #YOUR CODE HERE
 
     def bending_moments(self, u_global, num_points=2):
         """
@@ -184,9 +184,16 @@ class Element:
 
         local_x = np.linspace(0.0, l, num_points)
 
-        local_disp #YOUR CODE HERE
+        local_disp = np.matmul(self.T, u_global)
 
-        M #YOUR CODE HERE
+        w_1 = local_disp[1]
+        phi_1 = local_disp[2]
+        w_2 = local_disp[4]
+        phi_2 = local_disp[5]
+
+        M = (-l ** 5.0 * q + 6.0 * l ** 4.0 * q * local_x
+             - 6.0 * q * local_x * local_x * l ** 3.0 - 48.0 * (phi_1 + phi_2 / 2.0) * EI * l ** 2.0
+             + 72.0 * EI * ((phi_1 + phi_2) * local_x + w_1 - w_2) * l - 144.0 * local_x * EI * (w_1 - w_2)) / 12.0 / l ** 3.0
         
         return M
     
@@ -201,11 +208,26 @@ class Element:
         Returns:
             numpy.ndarray: Array of displacement along the element.
         """
-        #YOUR CODE HERE
+        L = self.L
+        q = self.q[1]
+        q_x = self.q[0]
+        EI= self.EI
+        EA = self.EA
 
-        u #YOUR CODE HERE
-        w #YOUR CODE HERE
+        x = np.linspace ( 0.0, L, num_points )
 
+        ul = np.matmul ( self.T, u_global )
+
+        u_1   = ul[0]
+        w_1   = ul[1]
+        phi_1 = ul[2]
+        u_2   = ul[3]
+        w_2   = ul[4]
+        phi_2 = ul[5]
+
+        u = q_x*(-L*x/(2*EA) + x**2/(2*EA)) + u_1*(1 - x/L) + u_2*x/L
+        w = phi_1*(-x + 2*x**2/L - x**3/L**2) + phi_2*(x**2/L - x**3/L**2) + q*(L**2*x**2/(24*EI) - L*x**3/(12*EI) + x**4/(24*EI)) + w_1*(1 - 3*x**2/L**2 + 2*x**3/L**3) + w_2*(3*x**2/L**2 - 2*x**3/L**3)
+        
         return u, w
     
     def plot_moment_diagram (self, u_elem, num_points=10, global_c=False, scale=1.0):
@@ -323,3 +345,107 @@ class Element:
         The string includes the values of the node1, node2 attributes.
         """
         return f"Element connecting:\nnode #1:\n {self.nodes[0]}\nwith node #2:\n {self.nodes[1]}"
+    
+class EB_point_load_element (Element):
+    """
+    The EB_point_load_element class describes an element combining extension and Euler-Bernoulli bending with a point load.
+
+    Attributes:
+        node1 (Node): The first node of the element.
+        node2 (Node): The second node of the element.
+        EA (float): Axial stiffness of the element.
+        EI (float): Bending stiffness of the element.
+        F (float): Point load in local z direction.
+        L (float): Length of the element.
+
+    Methods:
+        add_point_load_halfway(self, F): Adds a point load to the element.
+        bending_moments(u_global, num_points=2): Calculates the bending moments along the element.
+        full_displacement(u_global, num_points=2): Calculates the displacement along the element.
+
+    Inherits from:
+        Element: Base class for all structural elements.
+    """
+    def add_point_load_halfway(self, F):
+        """
+        Adds a point load to the element.
+
+        Parameters:
+            F (float): Point load in local z direction.
+
+        Returns:
+            None
+        """
+        self.F = F
+        l = self.L
+
+        el = [0, F / 2, - F * l / 8, 0, F / 2, F * l / 8]
+
+        eg = np.matmul(self.Tt, np.array(el))
+
+        self.nodes[0].add_load(eg[0:3])
+        self.nodes[1].add_load(eg[3:6])
+
+    def bending_moments (self, u_global, num_points=2):
+        """
+        Calculates the bending moments along the element.
+
+        Args:
+            u_global (numpy.ndarray): Global displacement vector of the element.
+            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
+
+        Returns:
+            numpy.ndarray: Array of bending moments along the element.
+        """
+        L = self.L
+        F = self.F
+        EI= self.EI
+
+        x = np.linspace ( 0.0, L, num_points )
+        M  = np.zeros(num_points)
+
+        ul = np.matmul ( self.T, u_global )
+        
+        w_1   = ul[1]
+        phi_1 = ul[2]
+        w_2   = ul[4]
+        phi_2 = ul[5]
+        
+        M = -F*L/8 + F*x/2 + phi_1*(-4*EI/L + 6*EI*x/L**2) + phi_2*(-2*EI/L + 6*EI*x/L**2) + w_1*(6*EI/L**2 - 12*EI*x/L**3) + w_2*(-6*EI/L**2 + 12*EI*x/L**3)
+        index_halfway = int(num_points/2)
+        M[index_halfway:] += - F*(-L/2 + x[index_halfway:])
+        return M
+    
+    def full_displacement (self, u_global, num_points=2):
+        """
+        Calculates the displacement along the element.
+
+        Args:
+            u_global (numpy.ndarray): Global displacement vector of the element.
+            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
+
+        Returns:
+            numpy.ndarray: Array of displacement along the element.
+        """
+        L = self.L
+        F = self.F
+        q_x = self.q[0]
+        EI= self.EI
+        EA = self.EA
+
+        x = np.linspace ( 0.0, L, num_points )
+
+        ul = np.matmul ( self.T, u_global )
+        
+        u_1   = ul[0]
+        w_1   = ul[1]
+        phi_1 = ul[2]
+        u_2   = ul[3]
+        w_2   = ul[4]
+        phi_2 = ul[5]
+        
+        u = q_x*(-L*x/(2*EA) + x**2/(2*EA)) + u_1*(1 - x/L) + u_2*x/L
+        w = phi_1*(-x + 2*x**2/L - x**3/L**2) + phi_2*(x**2/L - x**3/L**2) + w_1*(1 - 3*x**2/L**2 + 2*x**3/L**3) + w_2*(3*x**2/L**2 - 2*x**3/L**3) + F*L*x**2/(16*EI) - F*x**3/(12*EI)
+        index_halfway = int(num_points/2)
+        w[index_halfway:] += F*(x[index_halfway:] - L/2)**3/(6*EI)
+        return u, w

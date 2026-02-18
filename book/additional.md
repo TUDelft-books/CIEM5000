@@ -1,7 +1,11 @@
 ```{margin}
 
+::::::{versionadded} v2026.2.0 After workshop 2
+Solutions additional assignments in downloads 
+::::::
+
 ::::::{attention}
-This pages shows a preview of the assignments. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
+This pages shows a preview of the assignments including their solution. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2026/practice-assignments)
 ::::::
 
 ``` 
@@ -12,5 +16,10 @@ Additional assignments are provided to extend your implementation of the matrix 
 
 ```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2026/practice-assignments/tree/solution_additional
+:text: "All files practice assignments with solutions additional assignments"
 :replace_default: "False"
 ```
