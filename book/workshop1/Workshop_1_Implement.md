@@ -295,11 +295,11 @@ mm.Node.clear()
 mm.Element.clear()
 
 node1 = mm.Node(0,0)
-node2 = mm.Node(0,1)
+node2 = mm.Node(0,2)
 elem = mm.Element ( node1, node2 )
 
 section = {}
-section['EI'] = 1
+section['EI'] = 4
 
 elem.set_section (section)
 

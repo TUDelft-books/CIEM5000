@@ -6,7 +6,7 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.17.2
 kernelspec:
-  display_name: Python 3 (ipykernel)
+  display_name: base
   language: python
   name: python3
 ---
@@ -137,11 +137,11 @@ mm.Node.clear()
 mm.Element.clear()
 
 node1 = mm.Node(0,0)
-node2 = mm.Node(0,1)
+node2 = mm.Node(0,2)
 elem = mm.Element ( node1, node2 )
 
 section = {}
-section['EI'] = 1
+section['EI'] = 4
 
 elem.set_section (section)
 
