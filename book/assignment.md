@@ -24,6 +24,7 @@ Please open the assignment from [GitHub Classroom](https://classroom.github.com/
 When you've finished the workshops, you can start with the graded assignment You're going to solve the following structural model for displacements and internal forces using the matrix method:
 
 ```{figure} figures/graded_assignment_2026.svg
+:class: sticky-margin
 :align: center
 :source: https://github.com/CIEM5000-TU-Delft/prepare_assignments/blob/solution_2026/student_files/graded_assignment_2026.vsdx
 

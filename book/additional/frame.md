@@ -53,6 +53,7 @@ Solutions additional assignments  in text and downloads
 Given is the following beam {cite:p}`additional_Hans`:
 
 ```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/framesimpler.png
+:class: sticky-margin
 :align: center
 :width: 400
 ```

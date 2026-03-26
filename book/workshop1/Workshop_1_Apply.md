@@ -65,6 +65,7 @@ Our matrix method implementation is now completely stored in a local package, co
 +++
 
 ```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/vierendeel.png
+:class: sticky-margin
 :align: center
 :width: 400
 ```

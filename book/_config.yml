@@ -49,6 +49,7 @@ sphinx:
     - teachbooks_favourites
     - sphinx_tudelft_theme
     - sphinx_apa_references
+    - sphinx_sticky_margin
 
 bibtex_bibfiles: 
   - references.bib
